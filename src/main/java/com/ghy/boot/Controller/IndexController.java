@@ -35,11 +35,12 @@ public class IndexController {
     @GetMapping("/main.html")
     public String mainPage(HttpSession session,Model model){
         //是否登录，拦截器，过滤器
-        Object loginUser = session.getAttribute("loginUser");
+       /* Object loginUser = session.getAttribute("loginUser");
         if(loginUser != null){
             return "main";
         }
         model.addAttribute("msg","请重新登录");
-        return "login";
+        return "login";*/
+        return "main";
     }
 }
