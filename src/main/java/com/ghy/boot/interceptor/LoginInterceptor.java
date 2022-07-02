@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 public class LoginInterceptor implements HandlerInterceptor {
     @Override       //目标方法执行之前
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String requestURI = request.getRequestURI();
+        /*String requestURI = request.getRequestURI();
         log.info("preHandle拦截的请求路径是{}"+requestURI);
         //登录检查逻辑
         HttpSession session = request.getSession();
@@ -26,9 +26,10 @@ public class LoginInterceptor implements HandlerInterceptor {
         }
         //拦截住，未登录，跳转到登录页
         request.setAttribute("msg","请先登录！");
-        /*response.sendRedirect("/");*/
+        *//*response.sendRedirect("/");*//*
         request.getRequestDispatcher("/").forward(request,response);
-        return false;
+        return false;*/
+        return true;
     }
 
     @Override       //目标方法执行之后

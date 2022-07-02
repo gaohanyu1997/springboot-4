@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ResponseStatus(value = HttpStatus.FORBIDDEN,reason = "用户数量太多")
 public class UserTooManyException extends RuntimeException {
 
-    public UserTooManyException(String message){
+   /* public UserTooManyException(String message){
         super(message);
-    }
+    }*/
 }
