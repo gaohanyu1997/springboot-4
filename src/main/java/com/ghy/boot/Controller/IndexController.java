@@ -1,5 +1,8 @@
 package com.ghy.boot.Controller;
 import com.ghy.boot.bean.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -10,6 +13,9 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class IndexController {
+
+    @Autowired
+    StringRedisTemplate redisTemplate;
 
     //来登录页
     @GetMapping(value = {"/","/login"})
@@ -41,6 +47,13 @@ public class IndexController {
         }
         model.addAttribute("msg","请重新登录");
         return "login";*/
+
+        ValueOperations<String, String> operations =
+                redisTemplate.opsForValue();
+        String s = operations.get("/main.html");
+        String sql = operations.get("/sql");
+        model.addAttribute("mainCount",s);
+        model.addAttribute("sqlCount",sql);
         return "main";
     }
 }

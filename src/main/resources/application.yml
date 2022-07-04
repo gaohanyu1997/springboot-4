@@ -1,9 +1,31 @@
 spring:
+  redis:
+    host: @example.com  # redis服务器地址(公网地址)  第一种方式 分开来配置
+    port: 6379  # 端口号
+    password: Lfy123456 # 密码
+    client-type: jedis  # 明确申明连接工程就是jedis
+      jedis:
+        pool:
+          max-active: 10 # 最大线程数
+
+
+  #格式 redis://用户: 密码 rids服务器地址(公网地址) :端口号
+    #url: redis://lfy:Lfy123456@example.com:6379  第二种方式
+
+#    client-type: lettuce # 如果是lettuce
+#      lettuce:
+#      pool:
+#        max-active: 10  # 最大线程数
+#        min-idle: 5  # 最小空闲的
+
+
+
   datasource:
     url: jdbc:mysql://localhost:3306/test
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
+
 # 配置mybatis规则
 mybatis:
   config-location: classpath:mybatis/mybatis-config.xml # 指定mybatis全局配置文件
