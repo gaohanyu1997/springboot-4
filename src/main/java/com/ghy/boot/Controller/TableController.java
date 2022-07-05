@@ -46,10 +46,10 @@ public class TableController {
         //model.addAttribute("users",list);
 
         //分页查询数据
-        Page<Users> usersPage = new Page<>(pn,2);
+        /*Page<Users> usersPage = new Page<>(pn,2);
         //分页查询的结果
         Page<Users> page = usersService.page(usersPage,null);
-        model.addAttribute("page",page);
+        model.addAttribute("page",page);*/
 
 
         return "table/dynamic_table";
