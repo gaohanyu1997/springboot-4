@@ -1,3 +1,27 @@
+# 暴露监控信息
+# management 是所有actuator的配置
+# management.endpoint.端点名.xxx：对某个端点的具体配置
+management:
+  endpoint:
+    health:
+      show-details: always # 配置单个端点 always：总是显示详细信息
+
+    info:
+      enabled: true # 开启某一个端点
+
+    beans:
+      enabled: true # 开启某一个端点
+
+    metrics:
+      enabled: true # 开启某一个端点
+
+  endpoints:
+    enabled-by-default: true # 默认开启所有监控端点
+    web:
+      exposure:
+        include: '*' # 以web方式暴露所有端点
+
+
 spring:
   redis:
     host: @example.com  # redis服务器地址(公网地址)  第一种方式 分开来配置
