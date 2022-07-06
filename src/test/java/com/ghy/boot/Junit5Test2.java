@@ -1,4 +1,5 @@
 package com.ghy.boot;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -53,6 +54,14 @@ public class Junit5Test2 {
         if(2 == 2){
             fail("测试失败");
         }
+    }
+
+    // 测试前置条件
+    @Test
+    @DisplayName("测试前置条件")
+    void testAssumptions(){
+        Assumptions.assumeTrue(false,"结果不是true");
+        System.out.println("111111");
     }
 
 }
