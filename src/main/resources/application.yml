@@ -1,3 +1,11 @@
+# 定义一些info信息
+info:
+  appName: boot-admin
+  appVersion: 1.0.0
+  # 获取pom文件里面的内容
+  mavenProjectName: @project.artifactId@
+  mavenProjectVersion: @project.version@
+
 # 暴露监控信息
 # management 是所有actuator的配置
 # management.endpoint.端点名.xxx：对某个端点的具体配置

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class CityController {
     @Autowired
     CityService cityService;
-    @ResponseBody
+
     @GetMapping("/city")
     public City getCityById(@RequestParam("id") Long id){
         return cityService.getCityById(id);
